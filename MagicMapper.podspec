@@ -7,8 +7,8 @@ Pod::Spec.new do |s|
   s.license      = { :type => "Apache License 2.0", :file => "LICENSE" }
   s.author       = { "Adrian Mateoaea" => "adrianitech@gmail.com" }
 
-  s.ios.deployment_target = "8.0"
-  s.osx.deployment_target = "10.8"
+  s.ios.deployment_target = '9.0'
+  s.platform = :ios, '9.0'
 
   s.source       = { :git => "https://github.com/adrianitech/magic-mapper-swift.git", :tag => "#{s.version}" }
   s.source_files = "MagicMapper", "MagicMapper/*.swift"
