@@ -35,10 +35,29 @@
 
 ```swift
 class Company: NSObject, Mappable {
-    
     var name        : String = ""
     var catchPhrase : String = ""
     var tags        : [String] = []
+}
+
+class User: NSObject, Mappable {
+    var id       : String = ""
+    var fullName : String = ""
+    var nickname : String = ""
+    var city     : String = ""
+    var company  : Company = Company()
+}
+```
+
+### Step 3: Tell the mapper how to convert
+
+The method `populateFrom` lets you custom populate your model.
+The property `fromDictionaryNameMappings` tells the mapper where it will find the class properties.
+
+```swift
+class Company: NSObject, Mappable {
+
+    ...
     
     func populateFrom(_ dictionary: Mappable.KeyValue) {
         if let bs = dictionary["bs"] as? String {
@@ -49,11 +68,7 @@ class Company: NSObject, Mappable {
 
 class User: NSObject, Mappable {
     
-    var id       : String = ""
-    var fullName : String = ""
-    var nickname : String = ""
-    var city     : String = ""
-    var company  : Company = Company()
+    ...
     
     var fromDictionaryNameMappings: Mappable.Mapping {
         return [
@@ -65,4 +80,4 @@ class User: NSObject, Mappable {
 }
 ```
 
-### Step 3: That's it
+### Step 4: That's it!
