@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kWT-fS-fDq">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="DaE-jn-1SE">
+            <objects>
+                <tableViewController id="6kO-gY-KZC" customClass="ViewController" customModule="MagicMapper_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="F2A-Mt-oGb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="REi-BB-bjc">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="REi-BB-bjc" id="Gzh-Rj-UUY">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6kO-gY-KZC" id="oML-1f-myD"/>
+                            <outlet property="delegate" destination="6kO-gY-KZC" id="fEk-EP-0I1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="jaM-Qf-liV"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5iV-JF-rAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="912.79999999999995" y="244.22788605697153"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FzC-5v-Ifc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kWT-fS-fDq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aRJ-UR-2mm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6kO-gY-KZC" kind="relationship" relationship="rootViewController" id="Zae-s1-KUk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8qa-aD-RCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26.399999999999999" y="244.22788605697153"/>
+        </scene>
+    </scenes>
+</document>
