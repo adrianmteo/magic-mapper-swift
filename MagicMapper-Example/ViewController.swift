@@ -10,18 +10,42 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
+extension Date: Mappable {
+    
+    init?(from: Any) {
+        if let value = from as? String {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "YYYY-MM-dd'T'HH':'mm':'ss'Z'"
+            if let date = formatter.date(from: value) {
+                self.init(timeIntervalSince1970: date.timeIntervalSince1970)
+                return
+            }
+        }
+        
+        self.init()
+    }
+}
+
 class GithubRepository: NSObject, Mappable {
     
-    var id    : String = ""
-    var name  : String = ""
-    var body  : String = ""
-    var url   : String = ""
-    var photo : String = ""
+    var id        : String = ""
+    var name      : String = ""
+    var body      : String = ""
+    var url       : String = ""
+    var photo     : String = ""
+    var createdAt : Date?
     
-    var fromDictionaryNameMappings: Mappable.Mapping {
+    var mapFromDictionary: [String : String] {
         return [
-            "body"  : "description",
-            "photo" : "owner.avatar_url"
+            "body"      : "description",
+            "photo"     : "owner.avatar_url",
+            "createdAt" : "created_at"
+        ]
+    }
+    
+    var mapFromDictionaryTypes: [String : Mappable.Type] {
+        return [
+            "createdAt" : Date.self
         ]
     }
 }
@@ -31,16 +55,10 @@ class GithubSearch: NSObject, Mappable {
     var total : Int = 0
     var items : [GithubRepository] = []
     
-    var fromDictionaryNameMappings: Mappable.Mapping {
+    var mapFromDictionary: [String : String] {
         return [
             "total" : "total_count",
         ]
-    }
-    
-    func populateFrom(_ dictionary: Mappable.KeyValue) {
-        if let arr = dictionary["items"] as? [Mappable.KeyValue] {
-            self.items = arr.map { GithubRepository($0) }
-        }
     }
 }
 
@@ -61,7 +79,7 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         
         Alamofire.request(APIURL).responseJSON { (response) in
-            if let dictionary = response.result.value as? Mappable.KeyValue {
+            if let dictionary = response.result.value as? KeyValue {
                 self.feed = GithubSearch(dictionary)
             }
         }

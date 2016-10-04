@@ -5,111 +5,60 @@
 
 import Foundation
 
+typealias KeyValue = [String: Any]
+
 protocol Mappable {
-    typealias KeyValue = [String: Any]
-    typealias Mapping = [String: String]
+    init?(from: Any)
+    var mapFromDictionary: [String: String] { get }
+    var mapFromDictionaryTypes: [String: Mappable.Type] { get }
+}
+
+extension Mappable {
     
-    init(_ dictionary: KeyValue)
-    func populateFrom(_ dictionary: KeyValue)
+    var mapFromDictionary: [String: String] {
+        return [:]
+    }
     
-    var fromDictionaryNameMappings: Mapping { get }
-    var toDictionaryNameMappings: Mapping { get }
-    
-    var excludedPropertiesFromDictionary: [String] { get }
-    var dictionary: KeyValue { get }
-    
-    func convertValue(_ value: Any, fromDictionaryKey key: String) -> Any?
-    func convertValue(_ value: Any, forDictionaryKey key: String) -> Any?
+    var mapFromDictionaryTypes: [String: Mappable.Type] {
+        return [:]
+    }
 }
 
 extension Mappable where Self: NSObject {
     
+    init?(from: Any) {
+        guard let dictionary = from as? KeyValue else {
+            self.init()
+            return
+        }
+        self.init(dictionary)
+    }
+    
     init(_ dictionary: KeyValue) {
         self.init()
-        self.loadDataFrom(dictionary)
-    }
-    
-    fileprivate func loadDataFrom(_ dictionary: KeyValue) {
+        
         let properties = Mirror(reflecting: self).children.filter { $0.label != nil }
+        
         for property in properties {
-            let key = fromDictionaryNameMappings[property.label!] ?? property.label!
+            let classKey = property.label!
+            let dictKey = mapFromDictionary[classKey] ?? classKey
+            guard let value = dictionary.valueForKeyPath(dictKey) else { continue }
+            
             let mirror = Mirror(reflecting: property.value)
             
-            var value: Any? = nil
-            
-            if mirror.subjectType is String.Type {
-                value = dictionary.valueForKeyPath(key) as? String
-            } else if mirror.subjectType is Int.Type {
-                value = dictionary.valueForKeyPath(key) as? Int
-            } else if mirror.subjectType is Bool.Type {
-                value = dictionary.valueForKeyPath(key) as? Bool
-            } else if mirror.subjectType is Double.Type {
-                value = dictionary.valueForKeyPath(key) as? Double
-            } else if let type = mirror.subjectType as? Mappable.Type {
-                if let dictValue = dictionary.valueForKeyPath(key) as? KeyValue {
-                    value = type.init(dictValue)
+            if let type = mapFromDictionaryTypes[classKey] {
+                if let valueToBeSet = type.init(from: value) {
+                    self.setValue(valueToBeSet, forKey: classKey)
                 }
-            } else {
-                let dictValue = dictionary.valueForKeyPath(key)
-                value = convertValue(dictValue, fromDictionaryKey: key)
-            }
-            
-            if let value = value {
-                self.setValue(value, forKey: property.label!)
-            }
-        }
-        
-        populateFrom(dictionary)
-    }
-    
-    func populateFrom(_ dictionary: KeyValue) {
-        //
-    }
-    
-    var fromDictionaryNameMappings: Mapping {
-        return [:]
-    }
-    var toDictionaryNameMappings: Mapping {
-        return [:]
-    }
-    
-    var excludedPropertiesFromDictionary: [String] {
-        return []
-    }
-    
-    func convertValue(_ value: Any, fromDictionaryKey key: String) -> Any? {
-        return nil
-    }
-    
-    func convertValue(_ value: Any, forDictionaryKey key: String) -> Any? {
-        return nil
-    }
-    
-    var dictionary: KeyValue {
-        let excluded = excludedPropertiesFromDictionary
-        let properties = Mirror(reflecting: self).children.flatMap { element -> Mirror.Child? in
-            if let label = element.label, !excluded.contains(label) {
-                return element
-            }
-            return nil
-        }
-        
-        var dictionary = KeyValue()
-        
-        for property in properties {
-            let key = toDictionaryNameMappings[property.label!] ?? property.label!
-            
-            if let value = convertValue(property.value, forDictionaryKey: key) {
-                dictionary[key] = value
-            } else if let value = property.value as? Mappable {
-                dictionary[key] = value.dictionary
-            } else if let value = property.value as? [Mappable] {
-                dictionary[key] = value.map { $0.dictionary }
-            } else {
-                dictionary[key] = property.value
+            } else if let type = mirror.subjectType as? Mappable.Type {
+                if let valueToBeSet = type.init(from: value) {
+                    self.setValue(valueToBeSet, forKey: classKey)
+                }
+            } else if mirror.displayStyle == .optional {
+                if let value = value as? Mappable {
+                    self.setValue(value, forKey: classKey)
+                }
             }
         }
-        
-        return dictionary
     }
 }
