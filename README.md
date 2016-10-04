@@ -1,83 +1,95 @@
 # magic-mapper-swift
-🌟 Super light and easy JSON to model mapper
+🌟 Super light and easy automatic JSON to model mapper
 
-## How to convert
+- [ ] Finish writing `README.md`
+- [ ] Ability to convert model back to dictionary
+
+## How to setup
 
 ### Step 1: Get the JSON model
 
 ```json
 {
-  "id": 1,
-  "name": "Leanne Graham",
-  "username": "Bret",
-  "email": "Sincere@april.biz",
-  "address": {
-    "street": "Kulas Light",
-    "suite": "Apt. 556",
-    "city": "Gwenborough",
-    "zipcode": "92998-3874",
-    "geo": {
-      "lat": "-37.3159",
-      "lng": "81.1496"
-    }
-  },
-  "phone": "1-770-736-8031 x56442",
-  "website": "hildegard.org",
-  "company": {
-    "name": "Romaguera-Crona",
-    "catchPhrase": "Multi-layered client-server neural-net",
-    "bs": "harness real-time e-markets"
-  }
+  "total_count": 176552,
+  "incomplete_results": false,
+  "items": [
+    {...}
+  ]
 }
 ```
 
 ### Step 2: Write the Swift models
 
 ```swift
-class Company: NSObject, Mappable {
-    var name        : String = ""
-    var catchPhrase : String = ""
-    var tags        : [String] = []
+class GithubRepository: NSObject, Mappable {
+    var id        : String = ""
+    var name      : String = ""
+    var body      : String = ""
+    var url       : String = ""
+    var photo     : String = ""
+    var createdAt : Date?
 }
 
-class User: NSObject, Mappable {
-    var id       : String = ""
-    var fullName : String = ""
-    var nickname : String = ""
-    var city     : String = ""
-    var company  : Company = Company()
+class GithubSearch: NSObject, Mappable {
+    var total : Int = 0
+    var items : [GithubRepository] = []
 }
 ```
 
-### Step 3: Tell the mapper how to convert
+### Step 3: Link your custom namings with the JSON model
 
-The method `populateFrom` lets you custom populate your model.
-The property `fromDictionaryNameMappings` tells the mapper where it will find the class properties.
+The `mapFromDictionary` property lets you customize the properties mappings. You can also access nested values within dictionaries and arrays (example: `emails.0.address`).
 
 ```swift
-class Company: NSObject, Mappable {
-
-    ...
-    
-    func populateFrom(_ dictionary: Mappable.KeyValue) {
-        if let bs = dictionary["bs"] as? String {
-            self.tags = bs.components(separatedBy: " ")
-        }
-    }
+var mapFromDictionary: [String : String] {
+    return [
+        "body"      : "description",
+        "photo"     : "owner.avatar_url",
+        "createdAt" : "created_at"
+    ]
 }
+```
 
-class User: NSObject, Mappable {
+### Step 4: Custom properties
+
+The `mapFromDictionaryTypes` property let's you customize the type of the JSON property (only for optionals). If you have other Swift structures that you need to use, just extend them using the `Mappable` protocol.
+
+```swift
+var mapFromDictionaryTypes: [String : Mappable.Type] {
+    return [
+        "createdAt" : Date.self
+    ]
+}
+```
+
+For instance `createdAt` is of type `Date` and the JSON property is of type `String`. In order to convert the `String` to a `Date` type, just extend it using the `Mappable` protocol and it will automatically know to convert and set the value to the model.
+
+```swift
+extension Date: Mappable {
     
-    ...
-    
-    var fromDictionaryNameMappings: Mappable.Mapping {
-        return [
-            "fullName" : "name",
-            "nickname" : "username",
-            "city"     : "address.city"
-        ]
+    init?(from: Any) {
+        if let value = from as? String {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "YYYY-MM-dd'T'HH':'mm':'ss'Z'"
+            if let date = formatter.date(from: value) {
+                self.init(timeIntervalSince1970: date.timeIntervalSince1970)
+                return
+            }
+        }
+        
+        self.init()
     }
 }
 ```
 
-### Step 4: That's it!
+### And that's it!
+
+You can now populate your model from the generic dictionary that comes from your network layer. Happy coding :)
+
+```swift
+Alamofire.request(APIURL).responseJSON { (response) in
+    if let dictionary = response.result.value as? KeyValue {
+        self.feed = GithubSearch(dictionary)
+    }
+}
+```
