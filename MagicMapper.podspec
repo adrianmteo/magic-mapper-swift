@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "MagicMapper"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Automatic JSON to model mapper"
   s.homepage     = "https://github.com/adrianitech/magic-mapper-swift"
   s.license      = { :type => "Apache License 2.0", :file => "LICENSE" }
