@@ -11,6 +11,7 @@ public protocol Mappable {
     init?(from: Any)
     var mapFromDictionary: [String: String] { get }
     var mapFromDictionaryTypes: [String: Mappable.Type] { get }
+    var dictionaryValue: Any { get }
 }
 
 public extension Mappable {
@@ -22,9 +23,22 @@ public extension Mappable {
     var mapFromDictionaryTypes: [String: Mappable.Type] {
         return [:]
     }
+    
+    var dictionaryValue: Any {
+        return self
+    }
 }
 
 public extension Mappable where Self: NSObject {
+    
+    fileprivate func unwrap(_ any: Any) -> Any? {
+        let mirror = Mirror(reflecting: any)
+        
+        if mirror.displayStyle != .optional { return any }
+        guard let child = mirror.children.first else { return nil }
+        
+        return child.value
+    }
     
     init?(from: Any) {
         guard let dictionary = from as? KeyValue else {
@@ -55,10 +69,29 @@ public extension Mappable where Self: NSObject {
                     self.setValue(valueToBeSet, forKey: classKey)
                 }
             } else if mirror.displayStyle == .optional {
+                // Try to set value based on the dictionary type
                 if let value = value as? Mappable {
                     self.setValue(value, forKey: classKey)
                 }
             }
         }
+    }
+    
+    var dictionaryValue: Any {
+        return self.dictionary
+    }
+    
+    var dictionary: KeyValue {
+        var result = KeyValue()
+        let properties = Mirror(reflecting: self).children.filter { $0.label != nil }
+        
+        for property in properties {
+            let key = property.label!
+            if let type = unwrap(property.value) as? Mappable {
+                result[key] = type.dictionaryValue
+            }
+        }
+        
+        return result
     }
 }

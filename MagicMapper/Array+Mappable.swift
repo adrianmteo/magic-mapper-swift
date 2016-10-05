@@ -16,4 +16,8 @@ extension Array: Mappable {
         let values = array.flatMap { type.init(from: $0) as? Element }
         self.init(values)
     }
+    
+    public var dictionaryValue: Any {
+        return flatMap { ($0 as? Mappable)?.dictionaryValue } ?? []
+    }
 }
