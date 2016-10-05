@@ -3,11 +3,11 @@
 //  Copyright © 2016 Magic Mapper. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 extension Bool: Mappable {
     
-    init?(from: Any) {
+    public init?(from: Any) {
         if let value = from as? Bool {
             self.init(value)
             return

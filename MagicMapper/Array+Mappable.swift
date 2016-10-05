@@ -3,11 +3,11 @@
 //  Copyright © 2016 Magic Mapper. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 extension Array: Mappable {
     
-    init?(from: Any) {
+    public init?(from: Any) {
         guard let array = from as? [Any], let type = Element.self as? Mappable.Type else {
             self.init()
             return
