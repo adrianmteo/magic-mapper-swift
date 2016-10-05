@@ -18,6 +18,6 @@ extension Array: Mappable {
     }
     
     public var dictionaryValue: Any {
-        return flatMap { ($0 as? Mappable)?.dictionaryValue } ?? []
+        return flatMap { ($0 as? Mappable)?.dictionaryValue }
     }
 }

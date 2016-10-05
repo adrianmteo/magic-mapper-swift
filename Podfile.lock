@@ -2,7 +2,7 @@ PODS:
   - Alamofire (4.0.1)
   - AlamofireImage (3.1.0):
     - Alamofire (~> 4.0)
-  - MagicMapper (1.0.1)
+  - MagicMapper (1.0.2)
 
 DEPENDENCIES:
   - Alamofire
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   AlamofireImage: bb8c8351c51cb1633bb6be69b6dbbaff37ce65b7
-  MagicMapper: 073c1bf7e1c57a0c6062c43dfcbf33437f93fb54
+  MagicMapper: 1909d0e15b7a3ef7faec2c5e30791eed0815e934
 
 PODFILE CHECKSUM: 71624a03031d77812dae9c5583aeca51b145a59d
 
