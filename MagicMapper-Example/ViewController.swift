@@ -9,10 +9,11 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import MagicMapper
 
 extension Date: Mappable {
     
-    init?(from: Any) {
+    public init?(from: Any) {
         if let value = from as? String {
             let formatter = DateFormatter()
             formatter.dateFormat = "YYYY-MM-dd'T'HH':'mm':'ss'Z'"

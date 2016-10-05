@@ -3,11 +3,11 @@
 //  Copyright © 2016 Magic Mapper. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 extension Dictionary: Mappable {
     
-    init?(from: Any) {
+    public init?(from: Any) {
         self.init()
         
         guard let dictionary = from as? [Key: Any], let type = Value.self as? Mappable.Type else {

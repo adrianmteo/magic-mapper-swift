@@ -12,17 +12,8 @@
 		3A4C04201DA384AC0098DA46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4C041E1DA384AC0098DA46 /* Main.storyboard */; };
 		3A4C04221DA384AC0098DA46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4C04211DA384AC0098DA46 /* Assets.xcassets */; };
 		3A4C04251DA384AC0098DA46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4C04231DA384AC0098DA46 /* LaunchScreen.storyboard */; };
-		3A4C042A1DA385AE0098DA46 /* Dictionary+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7680841DA2C8D5004C930F /* Dictionary+Value.swift */; };
-		3A4C042B1DA385AE0098DA46 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7680851DA2C8D5004C930F /* Mappable.swift */; };
 		3A7680861DA2C8D5004C930F /* Dictionary+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7680841DA2C8D5004C930F /* Dictionary+Value.swift */; };
 		3A7680871DA2C8D5004C930F /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7680851DA2C8D5004C930F /* Mappable.swift */; };
-		3A7680891DA2C8EF004C930F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A7680881DA2C8EF004C930F /* Info.plist */; };
-		3AB1DD1C1DA440DC00EE387B /* Array+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF97C521DA43CB70048509C /* Array+Mappable.swift */; };
-		3AB1DD1D1DA440DC00EE387B /* Bool+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF97C501DA43CA90048509C /* Bool+Mappable.swift */; };
-		3AB1DD1E1DA440DC00EE387B /* Dictionary+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF97C541DA43CC60048509C /* Dictionary+Mappable.swift */; };
-		3AB1DD1F1DA440DC00EE387B /* Double+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF97C4E1DA43C9C0048509C /* Double+Mappable.swift */; };
-		3AB1DD201DA440DC00EE387B /* Int+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF97C4C1DA43C900048509C /* Int+Mappable.swift */; };
-		3AB1DD211DA440DC00EE387B /* String+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF97C4A1DA43C810048509C /* String+Mappable.swift */; };
 		3AF97C4B1DA43C810048509C /* String+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF97C4A1DA43C810048509C /* String+Mappable.swift */; };
 		3AF97C4D1DA43C900048509C /* Int+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF97C4C1DA43C900048509C /* Int+Mappable.swift */; };
 		3AF97C4F1DA43C9C0048509C /* Double+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF97C4E1DA43C9C0048509C /* Double+Mappable.swift */; };
@@ -254,7 +245,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A7680891DA2C8EF004C930F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,16 +303,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AB1DD1F1DA440DC00EE387B /* Double+Mappable.swift in Sources */,
 				3A4C041D1DA384AC0098DA46 /* ViewController.swift in Sources */,
-				3AB1DD211DA440DC00EE387B /* String+Mappable.swift in Sources */,
-				3AB1DD201DA440DC00EE387B /* Int+Mappable.swift in Sources */,
-				3AB1DD1C1DA440DC00EE387B /* Array+Mappable.swift in Sources */,
-				3A4C042A1DA385AE0098DA46 /* Dictionary+Value.swift in Sources */,
 				3A4C041B1DA384AC0098DA46 /* AppDelegate.swift in Sources */,
-				3A4C042B1DA385AE0098DA46 /* Mappable.swift in Sources */,
-				3AB1DD1D1DA440DC00EE387B /* Bool+Mappable.swift in Sources */,
-				3AB1DD1E1DA440DC00EE387B /* Dictionary+Mappable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E9D43827098D718107E7EE63 /* Pods-MagicMapper-Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "MagicMapper-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -380,6 +363,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F7AE1FB34514A17872CD47C0 /* Pods-MagicMapper-Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "MagicMapper-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -407,6 +391,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -460,6 +445,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

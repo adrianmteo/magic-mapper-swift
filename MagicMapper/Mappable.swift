@@ -5,15 +5,15 @@
 
 import Foundation
 
-typealias KeyValue = [String: Any]
+public typealias KeyValue = [String: Any]
 
-protocol Mappable {
+public protocol Mappable {
     init?(from: Any)
     var mapFromDictionary: [String: String] { get }
     var mapFromDictionaryTypes: [String: Mappable.Type] { get }
 }
 
-extension Mappable {
+public extension Mappable {
     
     var mapFromDictionary: [String: String] {
         return [:]
@@ -24,7 +24,7 @@ extension Mappable {
     }
 }
 
-extension Mappable where Self: NSObject {
+public extension Mappable where Self: NSObject {
     
     init?(from: Any) {
         guard let dictionary = from as? KeyValue else {
