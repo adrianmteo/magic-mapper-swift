@@ -1,6 +1,10 @@
 # magic-mapper-swift
 🌟 Super light and easy automatic JSON to model mapper
 
+![](https://img.shields.io/cocoapods/p/MagicMapper.svg)
+![](https://img.shields.io/cocoapods/v/MagicMapper.svg)
+![](https://img.shields.io/cocoapods/l/MagicMapper.svg)
+
 - [ ] Finish writing `README.md`
 - [ ] Ability to convert model back to dictionary
 
