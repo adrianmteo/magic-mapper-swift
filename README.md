@@ -6,7 +6,7 @@
 ![](https://img.shields.io/cocoapods/l/MagicMapper.svg)
 
 - [ ] Finish writing `README.md`
-- [ ] Ability to convert model back to dictionary
+- [x] Ability to convert model back to dictionary
 
 ## How to setup
 
@@ -97,3 +97,7 @@ Alamofire.request(APIURL).responseJSON { (response) in
     }
 }
 ```
+
+## Contributing
+
+There's still work to do here! Our goal is to speed up development times, making JSON mapping easy as 1-2-3. We would love to see you involved in this project!
