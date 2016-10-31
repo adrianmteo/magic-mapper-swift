@@ -6,6 +6,7 @@
 ![](https://img.shields.io/cocoapods/l/MagicMapper.svg)
 
 - [ ] Finish writing `README.md`
+- [ ] Ability to map `NSManagedObject`
 - [x] Ability to convert model back to dictionary
 
 ## How to setup
