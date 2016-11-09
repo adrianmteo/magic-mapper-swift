@@ -105,7 +105,7 @@ class ViewController: UITableViewController {
         Alamofire.request(API).responseJSON { (response) in
             if let dictionary = response.result.value as? KeyValue {
                 self.feed = GithubSearch(dictionary)
-                print(self.feed?.dictionary)
+                print(self.feed?.dictionary ?? "Nothing")
             }
         }
     }

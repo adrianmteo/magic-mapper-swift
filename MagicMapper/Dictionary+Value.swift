@@ -25,10 +25,13 @@ extension Dictionary {
                     value = arr[index]
                     keys.remove(at: 0)
             }
-            if let dict = value as? Dictionary {
-                let rejoined = keys.joined(separator: ".")
-                return dict.valueForKeyPath(rejoined)
+            
+            guard let dict = value as? Dictionary else {
+                return nil
             }
+            
+            let rejoined = keys.joined(separator: ".")
+            return dict.valueForKeyPath(rejoined)
         }
         
         return value

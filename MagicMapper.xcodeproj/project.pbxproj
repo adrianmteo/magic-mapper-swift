@@ -14,14 +14,27 @@
 		3A4C04251DA384AC0098DA46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4C04231DA384AC0098DA46 /* LaunchScreen.storyboard */; };
 		3A7680861DA2C8D5004C930F /* Dictionary+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7680841DA2C8D5004C930F /* Dictionary+Value.swift */; };
 		3A7680871DA2C8D5004C930F /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7680851DA2C8D5004C930F /* Mappable.swift */; };
+		3AD8FABE1DD389D000784873 /* MagicMapper_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD8FABD1DD389D000784873 /* MagicMapper_Tests.swift */; };
+		3AD8FAC01DD389D000784873 /* MagicMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7680791DA2C8CD004C930F /* MagicMapper.framework */; };
 		3AF97C4B1DA43C810048509C /* String+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF97C4A1DA43C810048509C /* String+Mappable.swift */; };
 		3AF97C4D1DA43C900048509C /* Int+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF97C4C1DA43C900048509C /* Int+Mappable.swift */; };
 		3AF97C4F1DA43C9C0048509C /* Double+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF97C4E1DA43C9C0048509C /* Double+Mappable.swift */; };
 		3AF97C511DA43CA90048509C /* Bool+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF97C501DA43CA90048509C /* Bool+Mappable.swift */; };
 		3AF97C531DA43CB70048509C /* Array+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF97C521DA43CB70048509C /* Array+Mappable.swift */; };
 		3AF97C551DA43CC60048509C /* Dictionary+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF97C541DA43CC60048509C /* Dictionary+Mappable.swift */; };
+		7BA8BA216567C472F7BCC27F /* Pods_MagicMapper_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4554AABC12C060D37497D913 /* Pods_MagicMapper_Tests.framework */; };
 		9935619F93595352FF1CE2E2 /* Pods_MagicMapper_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93567A46EF3CD68885DC1C15 /* Pods_MagicMapper_Example.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3AD8FAC11DD389D000784873 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A7680701DA2C8CD004C930F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A7680781DA2C8CD004C930F;
+			remoteInfo = MagicMapper;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3A4C04181DA384AC0098DA46 /* MagicMapper-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MagicMapper-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,13 +48,19 @@
 		3A7680841DA2C8D5004C930F /* Dictionary+Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Value.swift"; sourceTree = "<group>"; };
 		3A7680851DA2C8D5004C930F /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
 		3A7680881DA2C8EF004C930F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AD8FABB1DD389D000784873 /* MagicMapper-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MagicMapper-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AD8FABD1DD389D000784873 /* MagicMapper_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicMapper_Tests.swift; sourceTree = "<group>"; };
+		3AD8FABF1DD389D000784873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AF97C4A1DA43C810048509C /* String+Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Mappable.swift"; sourceTree = "<group>"; };
 		3AF97C4C1DA43C900048509C /* Int+Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Mappable.swift"; sourceTree = "<group>"; };
 		3AF97C4E1DA43C9C0048509C /* Double+Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Mappable.swift"; sourceTree = "<group>"; };
 		3AF97C501DA43CA90048509C /* Bool+Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+Mappable.swift"; sourceTree = "<group>"; };
 		3AF97C521DA43CB70048509C /* Array+Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Mappable.swift"; sourceTree = "<group>"; };
 		3AF97C541DA43CC60048509C /* Dictionary+Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Mappable.swift"; sourceTree = "<group>"; };
+		4554AABC12C060D37497D913 /* Pods_MagicMapper_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagicMapper_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AFB818202FD3352D73DB4F6 /* Pods-MagicMapper-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicMapper-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MagicMapper-Tests/Pods-MagicMapper-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		93567A46EF3CD68885DC1C15 /* Pods_MagicMapper_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagicMapper_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D85F97C4EEE6190681EEF5FC /* Pods-MagicMapper-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicMapper-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MagicMapper-Tests/Pods-MagicMapper-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E9D43827098D718107E7EE63 /* Pods-MagicMapper-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicMapper-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MagicMapper-Example/Pods-MagicMapper-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F7AE1FB34514A17872CD47C0 /* Pods-MagicMapper-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicMapper-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MagicMapper-Example/Pods-MagicMapper-Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +81,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3AD8FAB81DD389D000784873 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AD8FAC01DD389D000784873 /* MagicMapper.framework in Frameworks */,
+				7BA8BA216567C472F7BCC27F /* Pods_MagicMapper_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -69,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				93567A46EF3CD68885DC1C15 /* Pods_MagicMapper_Example.framework */,
+				4554AABC12C060D37497D913 /* Pods_MagicMapper_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -89,8 +118,9 @@
 		3A76806F1DA2C8CD004C930F = {
 			isa = PBXGroup;
 			children = (
-				3A4C04191DA384AC0098DA46 /* MagicMapper-Example */,
 				3A76807B1DA2C8CD004C930F /* MagicMapper */,
+				3AD8FABC1DD389D000784873 /* MagicMapper-Tests */,
+				3A4C04191DA384AC0098DA46 /* MagicMapper-Example */,
 				3A76807A1DA2C8CD004C930F /* Products */,
 				6953C5CCBB581C220BD3ABD5 /* Pods */,
 				10CBC4AFDD769209D48AECA6 /* Frameworks */,
@@ -102,6 +132,7 @@
 			children = (
 				3A7680791DA2C8CD004C930F /* MagicMapper.framework */,
 				3A4C04181DA384AC0098DA46 /* MagicMapper-Example.app */,
+				3AD8FABB1DD389D000784873 /* MagicMapper-Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +145,15 @@
 				3A7680881DA2C8EF004C930F /* Info.plist */,
 			);
 			path = MagicMapper;
+			sourceTree = "<group>";
+		};
+		3AD8FABC1DD389D000784873 /* MagicMapper-Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3AD8FABD1DD389D000784873 /* MagicMapper_Tests.swift */,
+				3AD8FABF1DD389D000784873 /* Info.plist */,
+			);
+			path = "MagicMapper-Tests";
 			sourceTree = "<group>";
 		};
 		3AF97C561DA43CD50048509C /* Extensions */ = {
@@ -135,6 +175,8 @@
 			children = (
 				E9D43827098D718107E7EE63 /* Pods-MagicMapper-Example.debug.xcconfig */,
 				F7AE1FB34514A17872CD47C0 /* Pods-MagicMapper-Example.release.xcconfig */,
+				7AFB818202FD3352D73DB4F6 /* Pods-MagicMapper-Tests.debug.xcconfig */,
+				D85F97C4EEE6190681EEF5FC /* Pods-MagicMapper-Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -190,14 +232,35 @@
 			productReference = 3A7680791DA2C8CD004C930F /* MagicMapper.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		3AD8FABA1DD389D000784873 /* MagicMapper-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AD8FAC31DD389D000784873 /* Build configuration list for PBXNativeTarget "MagicMapper-Tests" */;
+			buildPhases = (
+				C0B7DF66E4426CAFBC980938 /* [CP] Check Pods Manifest.lock */,
+				3AD8FAB71DD389D000784873 /* Sources */,
+				3AD8FAB81DD389D000784873 /* Frameworks */,
+				3AD8FAB91DD389D000784873 /* Resources */,
+				98D149196DD727C5284E0D19 /* [CP] Embed Pods Frameworks */,
+				4C82C7B3727396B2588C4F81 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AD8FAC21DD389D000784873 /* PBXTargetDependency */,
+			);
+			name = "MagicMapper-Tests";
+			productName = "MagicMapper-Tests";
+			productReference = 3AD8FABB1DD389D000784873 /* MagicMapper-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		3A7680701DA2C8CD004C930F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Magic Mapper";
 				TargetAttributes = {
 					3A4C04171DA384AC0098DA46 = {
@@ -207,6 +270,10 @@
 					3A7680781DA2C8CD004C930F = {
 						CreatedOnToolsVersion = 8.0;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+					3AD8FABA1DD389D000784873 = {
+						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -226,6 +293,7 @@
 			targets = (
 				3A7680781DA2C8CD004C930F /* MagicMapper */,
 				3A4C04171DA384AC0098DA46 /* MagicMapper-Example */,
+				3AD8FABA1DD389D000784873 /* MagicMapper-Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -242,6 +310,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3A7680771DA2C8CD004C930F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AD8FAB91DD389D000784873 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -266,6 +341,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MagicMapper-Example/Pods-MagicMapper-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4C82C7B3727396B2588C4F81 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MagicMapper-Tests/Pods-MagicMapper-Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5682643AF46EB4EBB41079E9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -281,7 +371,37 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MagicMapper-Example/Pods-MagicMapper-Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		98D149196DD727C5284E0D19 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MagicMapper-Tests/Pods-MagicMapper-Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A8CA70EBE2B0E5549409973A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C0B7DF66E4426CAFBC980938 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -323,7 +443,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3AD8FAB71DD389D000784873 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AD8FABE1DD389D000784873 /* MagicMapper_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3AD8FAC21DD389D000784873 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A7680781DA2C8CD004C930F /* MagicMapper */;
+			targetProxy = 3AD8FAC11DD389D000784873 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3A4C041E1DA384AC0098DA46 /* Main.storyboard */ = {
@@ -349,7 +485,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E9D43827098D718107E7EE63 /* Pods-MagicMapper-Example.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "MagicMapper-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -363,7 +499,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F7AE1FB34514A17872CD47C0 /* Pods-MagicMapper-Example.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "MagicMapper-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -513,6 +649,34 @@
 			};
 			name = Release;
 		};
+		3AD8FAC41DD389D000784873 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AFB818202FD3352D73DB4F6 /* Pods-MagicMapper-Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "MagicMapper-Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.MagicMapper.MagicMapper-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3AD8FAC51DD389D000784873 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D85F97C4EEE6190681EEF5FC /* Pods-MagicMapper-Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "MagicMapper-Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.MagicMapper.MagicMapper-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -539,6 +703,15 @@
 			buildConfigurations = (
 				3A7680821DA2C8CD004C930F /* Debug */,
 				3A7680831DA2C8CD004C930F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AD8FAC31DD389D000784873 /* Build configuration list for PBXNativeTarget "MagicMapper-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AD8FAC41DD389D000784873 /* Debug */,
+				3AD8FAC51DD389D000784873 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

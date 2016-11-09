@@ -7,3 +7,8 @@ target 'MagicMapper-Example' do
   pod 'AlamofireImage'
   pod 'MagicMapper', :path => "."
 end
+
+target 'MagicMapper-Tests' do
+    use_frameworks!
+    pod 'MagicMapper', :path => "."
+end
