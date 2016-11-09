@@ -69,6 +69,7 @@ class MagicMapper_Tests: XCTestCase {
         XCTAssertNil(example1.valueForKeyPath("profile.username"), "Should return nil because the `username` key is not found in the `profile` dictionary")
         XCTAssertEqual(example1.valueForKeyPath("messages.0.id") as? Int, 1, "Should return the `id` from the first `message` element")
         XCTAssertNil(example1.valueForKeyPath("messages.id"), "Should return nil because the `id` key is not valid for an array")
+        XCTAssertEqual((example1.valueForKeyPath("messages") as? [Any])?.count, 2, "Should return an array with 2 elements")
     }
     
     func testModelMapping() {
